@@ -4,7 +4,7 @@ import './styles.css'
  const WeatherExtraInfo = ({ humidity, wind }) => (//se toma los parámetro humidity y wind del componente WeatherData
 
    <div className="weatherExtraInfoCont">
-      <span className="extraInfoText">{`Humedad: ${humidity} % - `}</span> {/*template strings o literals Es6, hace el codigo mas legible*/}
+      <span className="extraInfoText">{`Humedad: ${humidity} %`}</span> {/*template strings o literals Es6, hace el codigo mas legible*/}
       <span className="extraInfoText">{`Vientos: ${wind}`}</span>
    </div>
  );
