@@ -89,9 +89,10 @@ class WeatherLocation extends Component{
 
   render(){
     console.log("render");
+    const {onWeatherLocationCLick} = this.props; //se toma como propiedad
     const {city, data } = this.state; /*destructuring*/
     return(
-      <div className="weatherLocationCont">
+      <div className="weatherLocationCont" onClick={onWeatherLocationCLick}> {/*onClick evento para detectar cuando se hace clic en el componente (onClick)*/}
         <Location city={city}/>  {/* city es una propiedad,se debe de utilizar donde el componente se encuentra*/}
         {/*operador ternario que es igual a un if*/}
         {data ?
@@ -116,6 +117,7 @@ pero con los nuevos datos para que se muestren (actualización)
 */
 WeatherLocation.propTypes = {
   city: PropTypes.string.isRequired,
+  onWeatherLocationCLick: PropTypes.func,
 };
 export default WeatherLocation;
 // exporta por defecto el componente que se genero

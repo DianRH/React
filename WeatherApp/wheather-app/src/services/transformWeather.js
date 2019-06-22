@@ -13,7 +13,7 @@ import {
 
 
   const getTemp = Kelvin =>{
-    return Number(convert(Kelvin).from("K").to("C").toFixed(2)); /*sintaxis pertenece a la libreria:https://www.npmjs.com/package/convert-units
+    return Number(convert(Kelvin).from("K").to("C").toFixed(0)); /*sintaxis pertenece a la libreria:https://www.npmjs.com/package/convert-units
                                                                   Number(toFixed(numero)) es un método para definir el número de decimales en ES6*/
   }
 
