@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text,View} from 'react-native';
 import { Modal, Portal,Button,Provider } from 'react-native-paper'
 import { SketchCanvas } from '@terrylinla/react-native-sketch-canvas'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 const styles = require('./style.js')
 
@@ -12,8 +12,9 @@ export default class Sign extends Component<Props> {
     this.state ={
       visible:false
     }
-        this.showModal = this.showModal.bind(this)
-        this.hideModal = this.hideModal.bind(this)
+
+      this.showModal = this.showModal.bind(this)
+      this.hideModal = this.hideModal.bind(this)
   }
 
   showModal(){
@@ -29,7 +30,7 @@ export default class Sign extends Component<Props> {
   }
 
   render() {
-    const { visible} = this.state
+    const { visible } = this.state
 
     return (
 
@@ -40,15 +41,14 @@ export default class Sign extends Component<Props> {
               <View style={styles.header}>
                 <Icon
                   name="close"
-                  size={30}
-                  color={'#000'}
-                    style={styles.close}
+                  size={20}
+                  color={'#2bba8f'}
+                  style={styles.closeIcon}
                   onPress={this.hideModal}
-
                  />
-                <Text style={styles.text}>Firma electrónica</Text>
+                <Text style={styles.title}>Firma electrónica</Text>
               </View>
-              <View style={styles.margin}>
+              <View style={styles.signContent}>
                 <SketchCanvas
                   style={styles.canvas}
                   strokeColor={'#020202'}
@@ -56,28 +56,28 @@ export default class Sign extends Component<Props> {
                   ref={ref => this.ref = ref}
                 />
               </View>
-              <View style={styles.viewBtn}>
-                <Text style={styles.borrar}
-                  onPress={()=>
-                    this.ref.getPaths().length == [] ?  console.warn('No haz firmado') : console.warn('si existe firma')}>
-                  Confirmar
-                </Text>
-                <Text
-                  style={styles.borrar}
-                  onPress={()=> this.ref.clear()}>
-                  Borrar
-                </Text>
-              </View>
+            <View style={styles.btn}>
+              <Text
+                style={styles.txtBtn}
+                onPress={()=> this.ref.clear()}>
+                Borrar
+              </Text>
+              <Text style={styles.txtBtn}
+                onPress={()=>
+                   this.ref.getPaths().length == [] ? console.warn('No hay firma') : console.warn('Si hay firma')}>
+                Aceptar
+              </Text>
             </View>
-          </Modal>
-        </Portal>
+          </View>
+        </Modal>
+      </Portal>
 
-       <Button
-         style={{ marginTop: 30 }}
-         onPress={this.showModal}>
-         Show
-       </Button>
-      </Provider>
+      <Button
+        style={{ marginTop: 30 }}
+        onPress={this.showModal}>
+        Show
+      </Button>
+    </Provider>
     );
   }
 }
