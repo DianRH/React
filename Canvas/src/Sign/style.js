@@ -5,44 +5,42 @@ module.exports = require('react-native').StyleSheet.create({
     flex: 1,
   },
   content:{
-    width: '95%',
+    width: '85%',
     height: '80%',
     backgroundColor:'#fff',
-    //'#d6d6d6'
-    marginLeft:'2.5%',
+    marginLeft:'7.5%',
   },
-  text:{
+  title:{
     fontSize:18,
-   color: 'white',
-   fontWeight:'400'
+   color:'#2bba8f',
+   fontWeight:'400',
   },
   header:{
-    height:'15%',
-    backgroundColor: '#2bba8f',
+    height:'14%',
     alignItems:'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    //borderBottomColor:'#2bba8f',
+    //borderBottomWidth: 1,
+    position:'relative'
   },
-  margin:{
-    borderColor: '#d6d6d6',
-    borderWidth: 1,
-    margin: 8,
-      height: '70%',
+  signContent:{
+    backgroundColor:'#eaeaea',
+    marginHorizontal: 20,
+    marginTop:10,
+    height: '70%'
   },
-  close:{
-    position: 'absolute',
-  top: 0,
-  left: 0,
-  marginLeft:10,
-  zIndex: 2
+  closeIcon:{
+  position: 'absolute',
+  left:20
   },
-  viewBtn:{
+  btn:{
   flexDirection:'row',
   justifyContent: 'flex-end',
-  paddingRight:9,
-  alignItems:'center',
-  },
-  borrar:{
-    fontSize:17,
-    marginLeft:18
+  marginRight:20,
+  marginVertical:9,
+},
+  txtBtn:{
+    fontSize:18,
+    marginLeft:20
   }
 });
