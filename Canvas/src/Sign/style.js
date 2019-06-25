@@ -12,15 +12,13 @@ module.exports = require('react-native').StyleSheet.create({
   },
   title:{
     fontSize:18,
-   color:'#2bba8f',
-   fontWeight:'400',
+    color:'#2bba8f',
+    fontWeight:'400',
   },
   header:{
     height:'14%',
     alignItems:'center',
     justifyContent: 'center',
-    //borderBottomColor:'#2bba8f',
-    //borderBottomWidth: 1,
     position:'relative'
   },
   signContent:{
@@ -28,10 +26,6 @@ module.exports = require('react-native').StyleSheet.create({
     marginHorizontal: 20,
     marginTop:10,
     height: '70%'
-  },
-  closeIcon:{
-  position: 'absolute',
-  left:20
   },
   btn:{
   flexDirection:'row',
@@ -42,5 +36,10 @@ module.exports = require('react-native').StyleSheet.create({
   txtBtn:{
     fontSize:18,
     marginLeft:20
+  },
+  error:{
+    alignSelf:'center',
+    marginBottom:15,
+    fontSize:18
   }
 });
